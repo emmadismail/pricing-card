@@ -1,51 +1,71 @@
+* {
+  box-sizing: border-box;
+}
+
 html {
-  background-color: rgb(236, 236, 236);
+  --color-grey-100: rgb(236, 236, 236);
+  --color-grey-400: rgb(134, 134, 134);
+  --color-grey-600: rgb(58, 58, 58);
+  --color-grey-900: rgb(41, 41, 41);
+
+  --color-primary-300: rgb(167, 226, 255);
+  --color-primary-700: rgb(0, 170, 255);
+
+  --size-1: 1.125rem;
+  --size-5: 3.125rem;
+
+  background-color: var(--color-grey-100);
   font-family: "Krub", sans-serif;
   font-weight: 400;
 }
 
 .card-container {
   background-color: rgb(255, 255, 255);
-  width: 350px;
+  width: 21.875rem;
   margin: 50px auto;
-  box-shadow: 3px 3px 10px rgb(201, 200, 200);
+  box-shadow: 0.1875rem 0.1875rem 0.625rem rgb(201, 200, 200);
+  transition: transform 0.5s ease-out;
+}
+
+.card-container:hover {
+  transform: scale(1.05);
 }
 
 h1 {
-  color: rgb(58, 58, 58);
+  color: var(--color-grey-600);
   text-align: left;
-  padding: 30px 50px 0px 50px;
+  padding: 30px 3.125rem 0 3.125rem;
   margin: 10px 0;
   font-family: "Zilla Slab", serif;
   font-weight: 600;
 }
 
 .card-info {
-  color: rgb(134, 134, 134);
+  color: var(--color-grey-400);
   text-align: left;
-  padding: 0 50px;
+  padding: 0 3.125rem;
   margin: 10px 0 30px 0;
 }
 
 .price {
-  color: rgb(41, 41, 41);
-  background-color: rgb(167, 226, 255);
+  color: var(--color-grey-900);
+  background-color: var(--color-primary-300);
   text-align: center;
   margin: 30px auto 10px auto;
-  font-size: 50px;
+  font-size: var(--size-5);
   font-weight: 600;
 }
 
 .price-info {
-  color: rgb(134, 134, 134);
+  color: var(--color-grey-400);
   text-align: center;
   margin: 10px 0 30px 0;
-  padding: 0 50px;
+  padding: 0 3.125rem;
 }
 
 .sub-details {
-  width: 300px;
-  margin: 30px 50px;
+  width: 18.75rem;
+  margin: 30px 3.125rem;
 }
 
 .sub-feature {
@@ -54,11 +74,11 @@ h1 {
 
 .icon {
   display: flex;
-  width: 10px;
+  width: 15px;
 }
 
 .sub-feature-text {
-  color: rgb(58, 58, 58);
+  color: var(--color-grey-600);
   padding: 2px;
   margin: 5px;
 }
@@ -69,20 +89,97 @@ h1 {
 }
 
 .button {
-  color: rgb(0, 170, 255);
+  color: var(--color-primary-700);
   text-decoration: none;
   text-transform: uppercase;
   display: inline-block;
   width: 70%;
   padding: 10px;
   margin: 0 0 30px 0;
-  border: 2px solid rgb(224, 224, 224);
-  font-size: 18px;
+  border: 0.125rem solid rgb(224, 224, 224);
+  font-size: var(--size-1);
   font-weight: 600;
+  transition: background-color 0.5s ease-out;
 }
 
 .button:hover {
   color: white;
-  background-color: rgb(0, 170, 255);
-  border: 2px solid rgb(255, 255, 255);
+  background-color: var(--color-primary-700);
+  border: 0.125rem solid rgb(255, 255, 255);
+}
+
+@media (max-width: 30rem) {
+  .card-container {
+    width: 98vw;
+    min-width: unset;
+    margin: 20px auto;
+  }
+
+  h1,
+  .card-info,
+  .price-info,
+  .sub-details {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  h1 {
+    font-size: 1.2rem;
+    padding-top: 1rem;
+  }
+
+  .price {
+    font-size: 2rem;
+    margin-top: 20px;
+    margin-bottom: 8px;
+  }
+
+  .sub-details {
+    width: 100%;
+    margin: 20px 0;
+  }
+
+  .button {
+    width: 95%;
+    font-size: 1rem;
+    padding: 12px;
+  }
+}
+
+@media (min-width: 30.063rem) and (max-width: 48rem) {
+  .card-container {
+    width: 85vw;
+    max-width: 28rem;
+    margin: 30px auto;
+  }
+
+  h1,
+  .card-info,
+  .price-info,
+  .sub-details {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    padding-top: 1.5rem;
+  }
+
+  .price {
+    font-size: 2.4rem;
+    margin-top: 24px;
+    margin-bottom: 10px;
+  }
+
+  .sub-details {
+    width: 100%;
+    margin: 24px 0;
+  }
+
+  .button {
+    width: 80%;
+    font-size: 1.08rem;
+    padding: 12px;
+  }
 }
