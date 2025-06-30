@@ -1,0 +1,37 @@
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Linux
+*~
+
+# Node modules (in case you ever add JS tooling)
+node_modules/
+
+# Log files
+*.log
+
+# Build output (if you ever use build tools)
+dist/
+build/
+
+# VSCode settings (optional)
+.vscode/
+
+# IDE/editor folders
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Environment variables (if you ever add a .env file)
+.env
+
+# Image caches/thumbnails
+*.png.cache
+
+# Optional: ignore screenshots (remove this line if you want to keep screenshots in your repo)
+# screenshot.png
